@@ -1,0 +1,1540 @@
+/* ==========================================================
+   Sandra Krämer – Personal Brand Website
+   Version 3.0
+
+   Developed by Sandra Krämer
+   Editorial & UX Support: ChatGPT
+
+   Natürlich. Klar. Nahbar.
+   ========================================================== */
+
+
+/* ==========================================================
+   01 | ROOT
+   ========================================================== */
+
+:root{
+
+    /* Farben */
+    --bg:#F8F7F2;
+    --surface:#FDFCF9;
+    --surface-soft:#F5F3EC;
+
+    --text:#343430;
+    --text-soft:#66645E;
+
+    --primary:#4E6B50;
+    --secondary:#A8B79E;
+    --accent:#C9A35A;
+    --highlight:#E8D58B;
+
+    --border:#E5E1D7;
+
+    /* Größen */
+    --radius:20px;
+    --radius-large:28px;
+
+    --shadow:0 10px 30px rgba(0,0,0,.05);
+
+    --content:760px;
+    --section:980px;
+    --hero:1140px;
+
+    /* Abstände */
+    --space-xs:.5rem;
+    --space-sm:1rem;
+    --space-md:2rem;
+    --space-lg:4rem;
+    --space-xl:6rem;
+    --space-2xl:8rem;
+
+    /* Schrift */
+    --font-heading:"Fraunces",serif;
+    --font-body:"Inter",sans-serif;
+
+    --transition:.28s ease;
+
+}
+
+
+/* ==========================================================
+   02 | RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+    scroll-padding-top:95px;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:var(--font-body);
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    border-radius:var(--radius-large);
+
+    box-shadow:var(--shadow);
+
+    transition:transform .35s ease;
+
+}
+
+img:hover{
+
+    transform:scale(1.01);
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+section{
+
+    padding:7rem 2rem;
+
+}
+
+
+/* ==========================================================
+   03 | LAYOUT
+   ========================================================== */
+
+.container{
+
+    width:min(1200px,92%);
+
+    margin:0 auto;
+
+}
+
+.container-text{
+
+    width:min(100%,var(--content));
+
+    margin-inline:auto;
+
+}
+
+
+/* ==========================================================
+   04 | TYPOGRAFIE
+   ========================================================== */
+
+h1,
+h2,
+h3{
+
+    font-family:var(--font-heading);
+
+    font-weight:600;
+
+    color:var(--primary);
+
+    letter-spacing:-.02em;
+
+}
+
+h1{
+
+    font-size:clamp(3rem,5vw,3.8rem);
+
+    line-height:1.15;
+
+    margin-bottom:1.75rem;
+
+}
+
+h2{
+
+    font-size:clamp(2.6rem,4vw,3.3rem);
+
+    line-height:1.15;
+
+    margin-bottom:2rem;
+
+    max-width:14ch;
+
+}
+
+h3{
+
+    font-size:1.35rem;
+
+    margin-bottom:.8rem;
+
+}
+
+p{
+
+    color:var(--text-soft);
+
+    margin-bottom:1.4rem;
+
+}
+
+.lead{
+
+    max-width:34rem;
+
+    font-size:1.2rem;
+
+}
+
+.eyebrow,
+.section-label{
+
+    display:inline-block;
+
+    margin-bottom:1rem;
+
+    color:var(--accent);
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   05 | NAVIGATION
+   ========================================================== */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    background:rgba(248,247,242,.92);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:100;
+
+}
+
+header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:76px;
+
+}
+
+.logo{
+
+    font-family:var(--font-heading);
+
+    color:var(--primary);
+
+    font-size:1.25rem;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:2rem;
+
+}
+
+nav a{
+
+    font-size:.95rem;
+
+    color:var(--text-soft);
+
+}
+
+nav a:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   06 | HERO
+   ========================================================== */
+
+.hero{
+
+    padding-top:5rem;
+
+    padding-bottom:5rem;
+
+}
+
+.hero-grid{
+
+    width:min(100%,var(--hero));
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:4rem;
+
+    align-items:center;
+
+}
+
+.hero h1{
+
+    max-width:none;
+
+}
+
+.hero-image{
+
+    padding-left:0;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    transition:transform .5s ease;
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.02);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+
+/* ==========================================================
+   07 | BUTTONS
+   ========================================================== */
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.95rem 1.6rem;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+}
+
+.button.primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.button.primary:hover{
+
+    background:#425944;
+
+    transform:translateY(-2px);
+
+}
+
+.button.secondary{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.button.secondary:hover{
+
+    border-color:var(--secondary);
+
+    transform:translateY(-2px);
+
+}
+/* ==========================================================
+   08 | EDITORIAL QUOTE
+   ========================================================== */
+
+.editorial-quote{
+
+    padding:4rem 2rem;
+
+}
+
+.editorial-quote .container-text{
+
+    text-align:center;
+
+}
+
+.editorial-quote::before,
+.editorial-quote::after{
+
+    content:"";
+
+    display:block;
+
+    width:72px;
+
+    height:2px;
+
+    background:var(--accent);
+
+    margin:0 auto 2rem;
+
+}
+
+.editorial-quote::after{
+
+    margin:2rem auto 0;
+
+}
+
+.editorial-quote p{
+
+    max-width:24ch;
+
+    margin:0 auto;
+
+    font-family:var(--font-heading);
+
+    font-size:clamp(1.8rem,3vw,2.2rem);
+
+    line-height:1.5;
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   09 | STORY
+   ========================================================== */
+
+.story .container{
+
+    max-width:var(--content);
+
+}
+
+.chapter{
+
+    max-width:920px;
+
+    margin:0 auto;
+
+}
+
+.chapter h2{
+
+    max-width:14ch;
+
+    font-size:clamp(2.6rem,4vw,3.3rem);
+
+    line-height:1.15;
+
+    margin-bottom:1rem;
+
+}
+
+.chapter p{
+
+    max-width:42rem;
+
+}
+
+.chapter p:last-child{
+
+    margin-bottom:0;
+
+}
+
+.intro{
+
+    font-family:var(--font-heading);
+
+    color:var(--primary);
+
+    font-size:1.35rem;
+
+    line-height:1.6;
+
+    margin-bottom:2rem;
+
+}
+
+.story{
+
+    padding:2.5rem 2rem;
+
+}
+
+.story + .story{
+
+    padding-top:1rem;
+
+}
+
+.story-divider{
+
+    width:90px;
+
+    height:2px;
+
+    background:var(--secondary);
+
+    margin:2rem 0 2.75rem;
+
+}
+
+.story-question{
+
+    margin:3rem 0 1.5rem;
+
+    font-size:1.6rem;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.story-quote{
+
+    max-width:720px;
+
+    margin:2.5rem auto;
+
+    padding:2.6rem;
+
+    background:var(--surface);
+
+    border-left:2px solid var(--accent);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    font-size:1.4rem;
+
+    line-height:1.6;
+
+}
+
+.story-quote span{
+
+    display:block;
+
+    margin-bottom:1rem;
+
+    font-weight:400;
+
+}
+
+.story-quote strong{
+
+    display:block;
+
+    color:var(--primary);
+
+}
+
+.story::after{
+
+    content:"";
+
+    display:block;
+
+    width:42px;
+
+    height:2px;
+
+    background:var(--accent);
+
+    opacity:.35;
+
+    margin:3rem auto 0;
+
+}
+
+.story:last-of-type::after{
+
+    display:none;
+
+}
+
+
+/* ==========================================================
+   10 | IMAGE BREAK
+   ========================================================== */
+
+.image-break{
+
+    padding:3rem 2rem;
+
+}
+
+.image-break .container{
+
+    max-width:980px;
+
+}
+
+.image-break img{
+
+    width:100%;
+
+    border-radius:24px;
+
+    object-fit:cover;
+
+}
+
+
+/* ==========================================================
+   11 | PRINCIPLES
+   ========================================================== */
+
+.principles{
+
+    margin-top:2.5rem;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:1.75rem;
+
+}
+
+.principles article{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:2rem;
+
+    transition:var(--transition);
+
+}
+
+.principles article:hover{
+
+    border-color:var(--secondary);
+
+    transform:translateY(-3px);
+
+}
+
+.principles h3{
+
+    color:var(--primary);
+
+}
+
+.principles p{
+
+    margin-bottom:0;
+
+}
+
+
+/* ==========================================================
+   12 | WIRKUNG
+   ========================================================== */
+
+.impact{
+
+    background:var(--surface-soft);
+
+    padding:5rem 2rem 7rem;
+}
+
+.impact .container{
+
+    max-width:980px;
+
+}
+
+.impact h2{
+
+    max-width:14ch;
+
+}
+
+.impact-intro{
+
+    max-width:760px;
+
+    margin-bottom:2rem;
+
+    font-size:1.1rem;
+
+}
+
+.impact-roadmap{
+
+    position:relative;
+
+}
+
+.impact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(380px,1fr));
+
+    gap:2.2rem;
+
+    z-index:2;
+
+    margin-top:1.5rem;
+
+}
+
+.impact-card{
+
+    position:relative;
+
+    padding:3rem;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    box-shadow:
+        0 6px 18px rgba(36,48,36,.04),
+        0 18px 40px rgba(36,48,36,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.impact-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 10px 26px rgba(36,48,36,.08),
+        0 22px 46px rgba(36,48,36,.08);
+
+}
+
+.card-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:2rem;
+
+    margin-bottom:1.8rem;
+
+}
+
+.card-header h3{
+
+    margin:.2rem 0 0;
+
+    font-size:1.65rem;
+
+    line-height:1.1;
+
+}
+
+.impact-icon-wrapper{
+
+    position:relative;
+
+    width:72px;
+
+    height:72px;
+
+    flex-shrink:0;
+
+}
+
+.icon-blob{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(168,183,158,.18);
+
+    border-radius:58% 42% 63% 37% / 40% 62% 38% 60%;
+
+    transform:rotate(-15deg);
+
+}
+
+.impact-icon{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:var(--primary);
+
+}
+
+.impact-card:hover .impact-icon{
+
+    color:#fff;
+
+    background:var(--primary);
+
+    border-radius:50%;
+
+}
+
+.card-divider{
+
+    width:72%;
+
+    height:2px;
+
+    margin-bottom:1.7rem;
+
+    background:var(--secondary);
+
+}
+
+.impact-card p{
+
+    margin-bottom:2.5rem;
+
+}
+
+.roadmap-node{
+
+    width:14px;
+
+    height:14px;
+
+    margin-top:2rem;
+
+    margin-left:auto;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    transition:.3s;
+
+}
+
+.impact-card:hover .roadmap-node{
+
+    transform:scale(1.35);
+
+}
+/* ==========================================================
+   13 | QUALIFIKATION
+   ========================================================== */
+
+.qualifications{
+
+    background:var(--bg);
+
+}
+
+.qualifications .container{
+
+    max-width:980px;
+
+}
+
+.qualifications h2{
+
+    max-width:14ch;
+
+}
+
+.qualification-intro{
+
+    max-width:760px;
+
+    margin-bottom:2rem;
+
+    font-size:1.1rem;
+
+}
+
+.qualification-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:2rem;
+
+    margin-top:3.5rem;
+
+    align-items:stretch;
+
+}
+
+.qualification-grid article{
+
+    padding:2rem;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-top:4px solid var(--secondary);
+
+    border-radius:24px;
+
+    box-shadow:
+        0 6px 18px rgba(36,48,36,.04),
+        0 18px 40px rgba(36,48,36,.06);
+
+    transition:var(--transition);
+
+}
+
+.qualification-grid article:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--secondary);
+
+}
+
+.qualification-grid h3{
+
+    margin-bottom:.8rem;
+
+    font-size:1.45rem;
+
+    color:var(--primary);
+
+}
+
+.qualification-grid p{
+
+    margin-bottom:0;
+
+    font-size:.98rem;
+
+}
+
+
+/* ==========================================================
+   14 | VIDEO
+   ========================================================== */
+
+.video{
+
+    text-align:center;
+    padding:7rem 2rem 4rem;
+
+}
+
+.video .container{
+
+    max-width:980px;
+
+}
+
+.video h2{
+
+    max-width:14ch;
+
+    margin-inline:auto;
+
+}
+
+.video-intro{
+
+    max-width:760px;
+
+    margin:0 auto 2rem;
+
+    text-align:center;
+
+    font-size:1.1rem;
+
+}
+
+.video-wrapper{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    aspect-ratio:16 / 9;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    box-shadow:0 16px 40px rgba(36,48,36,.08);
+
+}
+
+    .video-placeholder{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:3rem;
+
+    color:var(--text-soft);
+
+}
+
+    .video-placeholder h3{
+
+        margin-bottom:1rem;
+
+        color:var(--primary);
+
+    }
+
+.video-note{
+
+    margin-top:1.5rem;
+
+    color:var(--accent);
+
+    font-style:italic;
+
+}
+
+/* ==========================================================
+   15 | KONTAKT
+   ========================================================== */
+
+.contact{
+
+    text-align:center;
+    padding:4rem 2rem 7rem;
+
+}
+
+.contact .container{
+
+    max-width:980px;
+
+}
+
+.contact h2{
+
+    max-width:14ch;
+
+    margin-inline:auto;
+
+    margin-bottom:1rem;
+
+}
+
+.contact p{
+
+    max-width:680px;
+
+    margin:0 auto 3rem;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+}
+
+.contact-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1.25rem;
+
+    margin-top:3rem;
+
+}
+
+.contact-links a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.75rem;
+
+    min-width:240px;
+
+    padding:.95rem 1.6rem;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+}
+
+.contact-links a:hover{
+
+    color:var(--primary);
+
+    border-color:var(--secondary);
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   16 | FOOTER
+   ========================================================== */
+
+footer{
+
+    padding:8rem 0 5rem;
+
+    text-align:center;
+
+}
+
+.footer-content{
+
+    max-width:720px;
+
+    margin:0 auto;
+
+}
+
+.footer-content h3{
+
+    margin-bottom:.75rem;
+
+}
+
+.footer-role{
+
+    margin-bottom:2.5rem;
+
+    color:var(--primary);
+
+    font-weight:500;
+
+}
+
+.footer-content p{
+
+    max-width:620px;
+
+    margin:0 auto 1.5rem;
+
+}
+
+.footer-thanks{
+
+    margin:4rem auto 2rem;
+
+    font-style:italic;
+
+    color:var(--primary);
+
+}
+
+footer small{
+
+    display:block;
+
+    margin-top:2rem;
+
+    color:var(--text-soft);
+
+    font-size:.9rem;
+
+}
+/* ==========================================================
+   17 | ANIMATIONEN
+   ========================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(24px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   18 | HOVER-EFFEKTE
+   ========================================================== */
+
+.button,
+.contact-links a,
+.principles article,
+.qualification-grid article,
+.impact-card{
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+/* ==========================================================
+   19 | ACCESSIBILITY
+   ========================================================== */
+
+a:focus-visible,
+button:focus-visible{
+
+    outline:3px solid var(--highlight);
+
+    outline-offset:4px;
+
+    border-radius:999px;
+
+}
+
+::selection{
+
+    background:var(--highlight);
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================================
+   20 | RESPONSIVE
+   ========================================================== */
+
+@media (max-width:900px){
+
+    section{
+
+        padding:6rem 1.5rem;
+
+    }
+
+    header .container{
+
+        flex-direction:column;
+
+        gap:1rem;
+
+        padding:1rem 0;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:3rem;
+
+    }
+
+    .hero-image{
+
+        order:-1;
+
+        max-width:520px;
+
+        margin:0 auto;
+
+    }
+
+    .principles,
+    .impact-grid,
+    .qualification-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card-header{
+
+        gap:1.5rem;
+
+    }
+
+    .contact-links{
+
+        flex-direction:column;
+
+    }
+
+    .contact-links a{
+
+        width:100%;
+
+        min-width:unset;
+
+    }
+
+}
+
+
+@media (max-width:640px){
+
+    body{
+
+        font-size:18px;
+
+    }
+
+    section{
+
+        padding:5rem 1.25rem;
+
+    }
+
+    h1{
+
+        font-size:2.6rem;
+
+    }
+
+    h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .button{
+
+        width:100%;
+
+    }
+
+    .impact-card,
+    .qualification-grid article,
+    .principles article{
+
+        padding:1.6rem;
+
+    }
+
+    .card-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:1.2rem;
+
+    }
+
+    .card-divider{
+
+        width:100%;
+
+    }
+
+    .story-quote{
+
+        padding:2rem;
+
+        font-size:1.2rem;
+
+    }
+
+    .video-wrapper{
+
+        border-radius:18px;
+
+    }
+
+    .contact-links a{
+
+    padding:.8rem 1.2rem;
+
+    font-size:.95rem;
+
+    }
+    
+    .story p{
+
+    max-width:38ch;
+
+    }
+}
+
+
+/* ==========================================================
+   21 | KLEINE HILFSKLASSEN
+   ========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-lg{
+
+    margin-top:4rem;
+
+}
+
+.mb-0{
+
+    margin-bottom:0;
+
+}
+
+@media (max-width:360px){
+
+    .contact-links a{
+
+        padding:.75rem 1rem;
+
+        font-size:.9rem;
+
+    }
+
+}
+
+
+/* ==========================================================
+   ENDE
+   ========================================================== */
