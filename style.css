@@ -1811,3 +1811,79 @@ button:focus-visible{
 .lightbox-close{position:absolute;top:-.8rem;right:-.5rem;z-index:2;width:2.8rem;height:2.8rem;border:0;border-radius:50%;background:#fff;color:#26382d;font-size:2rem;line-height:1;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.25);}
 body.lightbox-open{overflow:hidden}
 @media(max-width:700px){.lightbox{padding:.75rem}.lightbox-dialog{width:100%;height:94vh}.lightbox-close{top:.25rem;right:.25rem}.zoom-hint{font-size:.72rem}}
+
+/* ==========================================================
+   V2.5.1 | MOBILE FIXES 2026-10-02
+   Nur nachgewiesene Mobile-Punkte:
+   Navigation, Metamorphose-Flip, Projekt-Lightbox
+   ========================================================== */
+
+@media (max-width:640px){
+  .site-header .nav-wrap{
+    width:min(100%,94%);
+    gap:.55rem;
+    padding:.65rem 0 .75rem;
+  }
+  .site-header .logo{font-size:1.1rem;}
+  .site-header nav{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:.25rem .35rem;
+  }
+  .site-header nav a{
+    grid-column:span 2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:.45rem .25rem;
+    font-size:.86rem;
+    line-height:1.2;
+    text-align:center;
+    border-radius:999px;
+  }
+  .site-header nav a:nth-child(4){grid-column:2 / span 2;}
+  .site-header nav a:nth-child(5){grid-column:4 / span 2;}
+
+  .flip-card{
+    aspect-ratio:auto;
+    height:clamp(500px,135vw,620px);
+    min-height:0;
+  }
+  .flip-card-inner{height:100%;min-height:0;}
+  .flip-card-front,.flip-card-back{width:100%;height:100%;}
+  .flip-card-front img{
+    width:100%;
+    height:100%;
+    min-height:0;
+    object-fit:cover;
+  }
+  .flip-card-back{
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    padding:1.35rem;
+  }
+  .flip-copy{font-size:.92rem;line-height:1.55;}
+
+  .lightbox{padding:.75rem;}
+  .lightbox-dialog{
+    width:calc(100vw - 1.5rem);
+    height:calc(100dvh - 1.5rem);
+    max-width:none;
+    max-height:none;
+    overflow:hidden;
+  }
+  .lightbox-image{
+    width:100%;
+    height:100%;
+    max-width:none;
+    max-height:none;
+    object-fit:contain;
+    border-radius:10px;
+    transform:none !important;
+  }
+  .lightbox-image:hover{transform:none !important;}
+  .lightbox-close{top:.4rem;right:.4rem;}
+}
+
