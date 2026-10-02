@@ -1511,6 +1511,14 @@ button:focus-visible{
     max-width:38ch;
 
     }
+   
+    .legal h1{
+       
+    font-size:2.35rem;
+    line-height:1.08;
+    overflow-wrap:anywhere;
+    hyphens:auto;
+  }
 }
 
 
