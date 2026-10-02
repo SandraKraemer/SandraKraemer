@@ -1887,3 +1887,50 @@ body.lightbox-open{overflow:hidden}
   .lightbox-close{top:.4rem;right:.4rem;}
 }
 
+/* ==========================================================
+   V2.5.2 | MOBILE CROSS-BROWSER FIX 2026-10-02
+   Flip-Touch, Metamorphose-Bild und Prozesspfeile
+   ========================================================== */
+
+/* Der Flip-Zustand wird ausschließlich über JS/.is-flipped gesteuert.
+   Das verhindert "hängende" :hover-Zustände auf Touch-Browsern. */
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-visible .flip-card-inner{
+  transform:none;
+}
+.flip-card.is-flipped .flip-card-inner{
+  transform:rotateY(180deg);
+}
+
+@media (max-width:640px){
+
+  /* Vorderseite: komplettes Metamorphose-Motiv zeigen statt Bildausschnitt. */
+  .flip-card-front{
+    background:var(--surface);
+  }
+  .flip-card-front img{
+    width:100%;
+    height:100%;
+    min-height:0;
+    object-fit:contain;
+    object-position:center;
+  }
+
+  /* Prozessfolge: Pfeile auf dem Handy deutlich sichtbar. */
+  .process-flow{
+    gap:.35rem;
+  }
+  .process-flow span{
+    width:100%;
+  }
+  .process-flow span:not(:last-child)::after{
+    content:"↓";
+    display:block;
+    margin:.35rem 0 .15rem;
+    font-size:1.35rem;
+    line-height:1;
+    font-weight:700;
+    color:var(--accent);
+  }
+}
+
